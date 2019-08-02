@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_round_head_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_seat_index"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        tools:text="8号麦" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ddd" />
+
+    <TextView
+        android:id="@+id/tv_take_seat"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="?android:selectableItemBackground"
+        android:gravity="center"
+        android:text="上麦"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="14sp" />
+
+    <View
+        android:id="@+id/v_take_seat_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ddd" />
+
+    <TextView
+        android:id="@+id/tv_change_seat"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="?android:selectableItemBackground"
+        android:gravity="center"
+        android:text="换麦"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="14sp" />
+
+    <View
+        android:id="@+id/v_change_seat_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ddd" />
+
+    <TextView
+        android:id="@+id/tv_leave_seat"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="?android:selectableItemBackground"
+        android:gravity="center"
+        android:text="下麦"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="14sp" />
+
+    <View
+        android:id="@+id/v_leave_seat_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ddd" />
+
+    <TextView
+        android:id="@+id/tv_pick_up"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="?android:selectableItemBackground"
+        android:gravity="center"
+        android:text="抱上"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="14sp" />
+
+    <View
+        android:id="@+id/v_pick_up_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ddd" />
+
+    <TextView
+        android:id="@+id/tv_kick_out"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="?android:selectableItemBackground"
+        android:gravity="center"
+        android:text="抱下"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="14sp" />
+
+    <View
+        android:id="@+id/v_kick_out_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ddd" />
+
+    <TextView
+        android:id="@+id/tv_mute_seat"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="?android:selectableItemBackground"
+        android:gravity="center"
+        android:text="禁麦"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="14sp" />
+
+    <View
+        android:id="@+id/v_mute_seat_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ddd" />
+
+    <TextView
+        android:id="@+id/tv_close_seat"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="?android:selectableItemBackground"
+        android:gravity="center"
+        android:text="封麦"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="14sp" />
+
+    <View
+        android:id="@+id/v_close_seat_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ddd" />
+
+    <TextView
+        android:id="@+id/tv_mute_all_seats"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="?android:selectableItemBackground"
+        android:gravity="center"
+        android:text="群体禁麦1-8"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="#ddd" />
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="?android:selectableItemBackground"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+</LinearLayout>

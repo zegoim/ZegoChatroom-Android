@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_round_head_bg">
+
+
+    <RadioGroup
+        android:id="@+id/rg_play_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:checkedButton="@id/rb_loop"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_loop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_rect_radio_button_bg"
+            android:button="@null"
+            android:paddingLeft="5dp"
+            android:paddingTop="3dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="3dp"
+            android:text="顺序播放"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/rb_random"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_rect_radio_button_bg"
+            android:button="@null"
+            android:paddingLeft="5dp"
+            android:paddingTop="3dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="3dp"
+            android:text="随机播放"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/rb_repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_rect_radio_button_bg"
+            android:button="@null"
+            android:paddingLeft="5dp"
+            android:paddingTop="3dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="3dp"
+            android:text="单曲循环"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+    </RadioGroup>
+
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        style="@android:style/Widget.ProgressBar.Inverse"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/rg_play_mode"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_current_music"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_below="@id/rg_play_mode"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@id/pb_loading"
+        android:layout_toRightOf="@id/pb_loading"
+        android:gravity="center_vertical"
+        android:text="当前歌曲："
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <SeekBar
+        android:id="@+id/sb_music"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_current_music"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp" />
+
+    <LinearLayout
+        android:id="@+id/ll_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sb_music"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_play_pause"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:selectableItemBackground"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="播放" />
+
+        <TextView
+            android:id="@+id/tv_stop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:selectableItemBackground"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="停止" />
+
+        <TextView
+            android:id="@+id/tv_previous_music"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:selectableItemBackground"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="上一首" />
+
+        <TextView
+            android:id="@+id/tv_next_music"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:selectableItemBackground"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="下一首" />
+
+        <TextView
+            android:id="@+id/tv_play_sound_effect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?android:selectableItemBackground"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="播放音效" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_play_list"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_below="@id/ll_player"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="30dp" />
+</RelativeLayout>

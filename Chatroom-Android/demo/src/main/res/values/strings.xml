@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">语聊房</string>
+    <string name="welcome_user">欢迎您%1$s</string>
+    <string name="create_room">创建房间</string>
+    <string name="room_name">房间名</string>
+    <string name="audio_bitrate">音频码率（单位bps，默认值为64000）</string>
+    <string name="audio_channel_count">声道数（1\\2，默认值为2）</string>
+    <string name="latency_mode">延时模式（LOW2 = 3，LOW3 = 4，默认值为4）</string>
+    <string name="create_now">立即创建</string>
+    <string name="room_owner_name">房主: %1$s</string>
+    <string name="exit_room">退出房间</string>
+    <string name="comment">评论</string>
+    <string name="send">发送</string>
+
+    <string name="sound_effect">音效</string>
+    <string name="voice_changer">变声</string>
+    <string name="stereo">立体声</string>
+    <string name="mixed_voice">混响</string>
+    <string name="loli">萝莉</string>
+    <string name="uncle">大叔</string>
+    <string name="sound_effect_no_set">无</string>
+    <string name="sound_effect_stereo_left_side">左侧声</string>
+    <string name="sound_effect_stereo_right_side">右侧声</string>
+    <string name="sound_effect_mixed_voice_lobby">大堂场景</string>
+    <string name="sound_effect_mixed_voice_valley">山谷场景</string>
+    <string name="sound_effect_audition">音效试听</string>
+    <string name="sound_effect_audition_ear_phone_tip">请戴上耳机获得更好的体验</string>
+    <string name="sound_effect_audition_close_tip">已关闭自己的立体音效果试听，对方仍可听到</string>
+</resources>

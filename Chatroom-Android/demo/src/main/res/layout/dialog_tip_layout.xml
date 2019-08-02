@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_tip_bg">
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:padding="10dp"
+        android:src="@drawable/dialog_close_ic" />
+
+    <TextView
+        android:id="@+id/tip_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:lines="1"
+        android:textColor="#333333"
+        android:textSize="20sp"
+        tools:text="退出房间" />
+
+    <TextView
+        android:id="@+id/tip_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tip_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center"
+        android:textSize="12sp"
+        tools:text="房主退出房间后房间将被关闭，是否确定离开" />
+
+    <LinearLayout
+        android:id="@+id/buttonPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tip_desc"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="40dp"
+        android:divider="@drawable/dialog_divider_tip"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="115dp"
+            android:layout_height="40dp"
+            android:background="@drawable/dialog_button_common_bg"
+            android:textColor="#0d70ff"
+            android:textSize="14sp"
+            tools:text="视频上麦" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="115dp"
+            android:layout_height="40dp"
+            android:background="@drawable/dialog_button_common_bg"
+            android:textColor="#0d70ff"
+            android:textSize="14sp"
+            tools:text="语言上麦" />
+
+        <Button
+            android:id="@+id/button_ok"
+            android:layout_width="115dp"
+            android:layout_height="40dp"
+            android:background="@drawable/dialog_button_ok_bg"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            tools:text="确定" />
+    </LinearLayout>
+</RelativeLayout>
