@@ -1,5 +1,7 @@
 # ZEGO 即构语聊房DEMO
 
+> 国内用户推荐去码云下载，速度更快 [https://gitee.com/zegodev/ZegoChatroom-Android.git](https://gitee.com/zegodev/ZegoChatroom-Android.git)
+
 ## 运行指引
 
 将项目下载到本地后，还需要额外下载相关直播SDK方可运行。
