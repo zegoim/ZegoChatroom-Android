@@ -24,6 +24,8 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        ZegoChatroom.setLogVerbose(true);
+
         boolean ref = ZegoChatroom.setupContext(this, ZegoDataCenter.ZEGO_USER, ZegoDataCenter.APP_ID, ZegoDataCenter.APP_SIGN);
         // 设置测试环境
         ZegoChatroom.setUseTestEnv(ZegoDataCenter.IS_TEST_ENV);
@@ -39,7 +41,6 @@ public class BaseApplication extends Application {
      * 初始化摇一摇显示日志管理
      */
     private void initLogShareShowManager() {
-        ZegoLogManager.getInstance().startTrace(this, ZegoLogManager.TRACE_ALL);
         LogShareShowManager.getInstance().enableShareShowLog(this, ZegoLogManager.getInstance().getLogInfoList());
     }
 }

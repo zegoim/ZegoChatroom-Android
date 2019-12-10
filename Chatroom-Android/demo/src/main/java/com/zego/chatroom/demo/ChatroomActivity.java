@@ -269,28 +269,7 @@ public class ChatroomActivity extends BaseActivity implements ZegoChatroomCallba
         mOwner.userID = intent.getStringExtra(EXTRA_KEY_OWNER_ID);
         mOwner.userName = intent.getStringExtra(EXTRA_KEY_OWNER_NAME);
 
-        boolean isOwner = isOwner();
-
-        if (isOwner) {
-            createChatroomWithIntent(intent);
-        } else {
-            joinChatroomWithIntent(intent);
-        }
-    }
-
-    private void createChatroomWithIntent(Intent intent) {
-        String roomID = intent.getStringExtra(EXTRA_KEY_ROOM_ID);
-        String roomName = intent.getStringExtra(EXTRA_KEY_ROOM_NAME);
-        int audioBitrate = intent.getIntExtra(EXTRA_KEY_AUDIO_BITRATE, ChatroomInfoHelper.DEFAULT_AUDIO_BITRATE);
-        mAudioChannelCount = intent.getIntExtra(EXTRA_KEY_AUDIO_CHANNEL_COUNT, ChatroomInfoHelper.DEFAULT_AUDIO_CHANNEL_COUNT);
-        int latencyMode = intent.getIntExtra(EXTRA_KEY_LATENCY_MODE, ChatroomInfoHelper.DEFAULT_LATENCY_MODE);
-
-        ZegoChatroomLiveConfig config = new ZegoChatroomLiveConfig();
-        config.setBitrate(audioBitrate);
-        config.setAudioChannelCount(mAudioChannelCount);
-        config.setLatencyMode(latencyMode);
-
-        ZegoChatroom.shared().createChatroom(roomID, roomName, createDefaultZegoSeats(), config);
+        joinChatroomWithIntent(intent);
     }
 
     private List<ZegoChatroomSeat> createDefaultZegoSeats() {
@@ -308,6 +287,7 @@ public class ChatroomActivity extends BaseActivity implements ZegoChatroomCallba
 
     private void joinChatroomWithIntent(Intent intent) {
         String roomID = intent.getStringExtra(EXTRA_KEY_ROOM_ID);
+        String roomName = intent.getStringExtra(EXTRA_KEY_ROOM_NAME);
         int audioBitrate = intent.getIntExtra(EXTRA_KEY_AUDIO_BITRATE, ChatroomInfoHelper.DEFAULT_AUDIO_BITRATE);
         mAudioChannelCount = intent.getIntExtra(EXTRA_KEY_AUDIO_CHANNEL_COUNT, ChatroomInfoHelper.DEFAULT_AUDIO_CHANNEL_COUNT);
         int latencyMode = intent.getIntExtra(EXTRA_KEY_LATENCY_MODE, ChatroomInfoHelper.DEFAULT_LATENCY_MODE);
@@ -317,7 +297,7 @@ public class ChatroomActivity extends BaseActivity implements ZegoChatroomCallba
         config.setAudioChannelCount(mAudioChannelCount);
         config.setLatencyMode(latencyMode);
 
-        ZegoChatroom.shared().joinChatroom(roomID, config);
+        ZegoChatroom.shared().joinChatroom(roomID, roomName, createDefaultZegoSeats(), config);
     }
 
     private void exitRoom() {
