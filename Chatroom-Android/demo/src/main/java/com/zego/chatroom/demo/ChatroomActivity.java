@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -85,6 +88,21 @@ public class ChatroomActivity extends BaseActivity implements ZegoChatroomCallba
     final static String EXTRA_KEY_AUDIO_CHANNEL_COUNT = "audio_channel_count";
     final static String EXTRA_KEY_LATENCY_MODE = "latency_mode";
 
+    private final static long DELAY_NOTIFY_DATA_SET_CHANGE = 500;
+    private final static int MSG_NOTIFY_DATA_SET_CHANGED = 0x10;
+
+    private Handler mNotifyDataSetChangedHandler = new Handler(Looper.getMainLooper()) {
+        @Override
+        public void handleMessage(Message msg) {
+            if (msg.what == MSG_NOTIFY_DATA_SET_CHANGED) {
+                if (mSeatsAdapter != null) {
+                    mSeatsAdapter.notifyDataSetChanged();
+                    mNotifyDataSetChangedHandler.sendEmptyMessageDelayed(MSG_NOTIFY_DATA_SET_CHANGED, DELAY_NOTIFY_DATA_SET_CHANGE);
+                }
+            }
+        }
+    };
+
     private ZegoChatroomUser mOwner;
 
     private View mFlLoading;
@@ -159,6 +177,7 @@ public class ChatroomActivity extends BaseActivity implements ZegoChatroomCallba
         mSeatsAdapter.setOnChatroomSeatClickListener(this);
 
         mMsgAdapter = new MsgAdapter();
+        mNotifyDataSetChangedHandler.sendEmptyMessageDelayed(MSG_NOTIFY_DATA_SET_CHANGED, DELAY_NOTIFY_DATA_SET_CHANGE);
     }
 
     private void initView() {
@@ -436,7 +455,7 @@ public class ChatroomActivity extends BaseActivity implements ZegoChatroomCallba
         playList.add(new ZegoMusicResource(SystemUtil.copyAssetsFile2Phone(this, "zhuoniqiu.mp3"), "抓泥鳅"));
         playList.add(new ZegoMusicResource(SystemUtil.copyAssetsFile2Phone(this, "haikuotiankong.mp3"), "海阔天空"));
         playList.add(new ZegoMusicResource(SystemUtil.copyAssetsFile2Phone(this, "shishangzhiyoumamahao.mp3"), "世上只有妈妈好"));
-        playList.add(new ZegoMusicResource("http://www.ytmp3.cn/down/59249.mp3", "假如-网络资源"));
+        playList.add(new ZegoMusicResource("https://storage.zego.im/demo/201808270915.mp4", "大海-网络资源"));
 
         return playList;
     }
@@ -965,7 +984,7 @@ public class ChatroomActivity extends BaseActivity implements ZegoChatroomCallba
         ChatroomSeatInfo seat = getSeatForUser(user);
         if (seat != null) {
             seat.mSoundLevel = soundLevel;
-            mSeatsAdapter.notifyDataSetChanged();
+            // 通过 mNotifyDataSetChangedHandler 更新数据
         }
     }
 
@@ -973,7 +992,7 @@ public class ChatroomActivity extends BaseActivity implements ZegoChatroomCallba
         ChatroomSeatInfo seat = getSeatForUser(user);
         if (seat != null) {
             seat.mDelay = delay;
-            mSeatsAdapter.notifyDataSetChanged();
+            // 通过 mNotifyDataSetChangedHandler 更新数据
         }
     }
 
